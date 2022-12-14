@@ -4,10 +4,14 @@ import { HomePageView } from 'pages/HomePageView';
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePageView />} />
-      </Route>
-    </Routes>
+    <div>
+      {' '}
+      HELLO
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePageView />} />
+        </Route>
+      </Routes>
+    </div>
   );
 };
