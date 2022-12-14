@@ -5,7 +5,7 @@ const API_KEY = 'd929b7a4b435aa22496bb0793b172bfc';
 
 export async function getTrendingMovies() {
   try {
-    const { data } = await axios.get('3/trending/movie/day', {
+    const { data } = await axios('3/trending/movie/day', {
       params: {
         api_key: API_KEY,
       },
@@ -18,7 +18,7 @@ export async function getTrendingMovies() {
 
 export async function getMovieByQuery(query, page = 1) {
   try {
-    const { data } = await axios.get('3/search/movie', {
+    const { data } = await axios('3/search/movie', {
       params: {
         api_key: API_KEY,
         query,
@@ -33,7 +33,7 @@ export async function getMovieByQuery(query, page = 1) {
 
 export async function getOneMovieById(id) {
   try {
-    const { data } = await axios.get(`3/movie/${id}`, {
+    const { data } = await axios(`3/movie/${id}`, {
       params: {
         api_key: API_KEY,
       },
@@ -46,7 +46,7 @@ export async function getOneMovieById(id) {
 
 export async function getMovieActors(id) {
   try {
-    const { data } = await axios.get(`3/movie/${id}/credits`, {
+    const { data } = await axios(`3/movie/${id}/credits`, {
       params: {
         api_key: API_KEY,
       },
@@ -59,7 +59,7 @@ export async function getMovieActors(id) {
 
 export async function getMovieReviews(id) {
   try {
-    const { data } = await axios.get(`3/movie/${id}/reviews`, {
+    const { data } = await axios(`3/movie/${id}/reviews`, {
       params: {
         api_key: API_KEY,
       },

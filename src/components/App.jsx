@@ -1,3 +1,6 @@
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
+import { HomePageView } from 'pages/HomePageView';
 import {
   getTrendingMovies,
   getMovieByQuery,
@@ -6,25 +9,12 @@ import {
   getMovieReviews,
 } from 'services/moviesAPI';
 
-/* getMovieByQuery('cat');
-
-getOneMovieById(991833); 
-getMovieActors(991833);*/
-getMovieReviews(991833);
-
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React homework template
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePageView />} />
+      </Route>
+    </Routes>
   );
 };
