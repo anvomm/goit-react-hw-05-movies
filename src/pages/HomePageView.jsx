@@ -27,7 +27,7 @@ export const HomePageView = () => {
   return (
     trendingMovies && (
       <>
-        <Heading text={'Trending movies'} />
+        <Heading text={'Trending today'} />
         <MoviesCardsList movies={trendingMovies} />
       </>
     )
