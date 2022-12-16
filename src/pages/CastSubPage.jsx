@@ -26,7 +26,7 @@ export const CastSubPage = () => {
       loadActors().then(setActors);
       doOneFetch.current = 1;
     }
-  });
+  }, [movieId]);
 
   return <ActorsList actors={actors} />;
 };
