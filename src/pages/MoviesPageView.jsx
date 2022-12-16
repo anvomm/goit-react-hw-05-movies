@@ -13,10 +13,15 @@ export const MoviesPageView = () => {
   useEffect(() => {
     const fetchMoviesOnSearch = async () => {
       const arrayOfMovies = await getMovieByQuery(queryParam, page);
-      const arrayOfMovieTitles = arrayOfMovies.results.map(({ id, title }) => ({
-        id,
-        title,
-      }));
+      const arrayOfMovieTitles = arrayOfMovies.results.map(
+        ({ id, title, poster_path, vote_average, release_date }) => ({
+          id,
+          title,
+          poster_path,
+          vote_average,
+          release_date,
+        })
+      );
       setMovies(arrayOfMovieTitles);
     };
 

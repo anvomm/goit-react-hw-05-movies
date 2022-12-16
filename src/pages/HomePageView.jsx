@@ -11,10 +11,15 @@ export const HomePageView = () => {
   useEffect(() => {
     const fetchTrendingMovies = async () => {
       const arrayOfMovies = await getTrendingMovies();
-      const arrayOfMovieTitles = arrayOfMovies.map(({ id, title }) => ({
-        id,
-        title,
-      }));
+      const arrayOfMovieTitles = arrayOfMovies.map(
+        ({ id, title, poster_path, vote_average, release_date }) => ({
+          id,
+          title,
+          poster_path,
+          vote_average,
+          release_date,
+        })
+      );
       return arrayOfMovieTitles;
     };
 
