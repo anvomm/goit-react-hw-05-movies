@@ -38,7 +38,7 @@ export async function getOneMovieById(id) {
         api_key: API_KEY,
       },
     });
-    return data.results;
+    return data;
   } catch (error) {
     console.error(error);
   }
@@ -51,7 +51,7 @@ export async function getMovieActors(id) {
         api_key: API_KEY,
       },
     });
-    return data.results;
+    return data.cast;
   } catch (error) {
     console.error(error);
   }
@@ -64,7 +64,6 @@ export async function getMovieReviews(id) {
         api_key: API_KEY,
       },
     });
-    console.log(data);
     return data.results;
   } catch (error) {
     console.error(error);
