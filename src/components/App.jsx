@@ -5,7 +5,6 @@ import { MoviesPageView } from 'pages/MoviesPageView';
 import { MovieDetailsPageView } from 'pages/MovieDetailsPageView';
 import { CastSubPage } from 'pages/CastSubPage';
 import { ReviewsSubPage } from 'pages/ReviewsSubPage';
-import { NotFound } from 'pages/NotFound';
 
 export const App = () => {
   return (
@@ -17,8 +16,8 @@ export const App = () => {
           <Route path="cast" element={<CastSubPage />} />
           <Route path="reviews" element={<ReviewsSubPage />} />
         </Route>
+        <Route path="*" element={<HomePageView />} />
       </Route>
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
