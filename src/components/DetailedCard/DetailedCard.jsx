@@ -1,10 +1,12 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 export const DetailedCard = ({ movieData }) => {
   const date = () => new Date(movieData.release_date).getFullYear();
   const genres = movieData.genres
     ? movieData.genres.map(genre => genre.name).join(', ')
     : 'unknown';
+
+  const location = useLocation();
 
   return (
     <div>
@@ -21,10 +23,14 @@ export const DetailedCard = ({ movieData }) => {
       <h3>Additional information</h3>
       <ul>
         <li>
-          <Link to={'cast'}>Cast</Link>
+          <Link to={'cast'} state={location.state}>
+            Cast
+          </Link>
         </li>
         <li>
-          <Link to={'reviews'}>Reviews</Link>
+          <Link to={'reviews'} state={location.state}>
+            Reviews
+          </Link>
         </li>
       </ul>
       <Outlet />

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { getOneMovieById } from 'services/moviesAPI';
 import { DetailedCard } from 'components/DetailedCard/DetailedCard';
 
@@ -7,6 +7,9 @@ export const MovieDetailsPageView = () => {
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState({});
   const doOneFetch = useRef(null);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadMovieData = async () => {
@@ -19,5 +22,17 @@ export const MovieDetailsPageView = () => {
     }
   }, [movieId]);
 
-  return movieData && <DetailedCard movieData={movieData} />;
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          navigate(location?.state?.from ?? '/');
+        }}
+      >
+        Go back
+      </button>
+      {movieData && <DetailedCard movieData={movieData} />}
+    </>
+  );
 };

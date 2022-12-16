@@ -1,5 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const MovieCard = ({ id, title }) => {
-  return <Link to={`/movies/${id}`}>{title}</Link>;
+  const location = useLocation();
+
+  return (
+    <Link to={`/movies/${id}`} state={{ from: location }}>
+      {title}
+    </Link>
+  );
 };
