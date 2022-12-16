@@ -28,5 +28,9 @@ export const CastSubPage = () => {
     }
   }, [movieId]);
 
-  return <ActorsList actors={actors} />;
+  return actors.length > 0 ? (
+    <ActorsList actors={actors} />
+  ) : (
+    <p>Unfortunately no actors was found</p>
+  );
 };
