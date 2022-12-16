@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export const ActorCard = ({ name, picture, character }) => {
   const getImgUrl = image => {
     if (image === null) {
