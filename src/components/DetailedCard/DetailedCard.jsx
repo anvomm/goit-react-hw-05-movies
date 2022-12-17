@@ -1,4 +1,4 @@
-import PropTypes, { arrayOf } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 export const DetailedCard = ({ movieData }) => {
