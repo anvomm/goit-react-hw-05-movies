@@ -1,14 +1,19 @@
 import { Navigation } from 'components/Navigation/Navigation';
 import { Outlet } from 'react-router-dom';
+import { Container } from 'components/Container/Container';
 
 export const Layout = () => {
   return (
     <>
       <header>
-        <Navigation />
+        <Container>
+          <Navigation />
+        </Container>
       </header>
       <main>
-        <Outlet />
+        <Container>
+          <Outlet />
+        </Container>
       </main>
       <footer></footer>
     </>
