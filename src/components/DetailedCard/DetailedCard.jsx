@@ -1,3 +1,4 @@
+import PropTypes, { arrayOf } from 'prop-types';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 export const DetailedCard = ({ movieData }) => {
@@ -36,4 +37,14 @@ export const DetailedCard = ({ movieData }) => {
       <Outlet />
     </div>
   );
+};
+
+DetailedCard.propTypes = {
+  movieData: PropTypes.shape({
+    title: PropTypes.string,
+    poster_path: PropTypes.string,
+    vote_average: PropTypes.number,
+    genres: PropTypes.arrayOf(PropTypes.object),
+    release_date: PropTypes.string,
+  }),
 };

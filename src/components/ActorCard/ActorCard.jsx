@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const ActorCard = ({ name, picture, character }) => {
   const getImgUrl = image => {
     if (image === null) {
@@ -12,4 +14,10 @@ export const ActorCard = ({ name, picture, character }) => {
       <p>{character}</p>
     </>
   );
+};
+
+ActorCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  picture: PropTypes.string,
+  character: PropTypes.string,
 };

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const SearchForm = ({ showMovies }) => {
   const handleSubmit = e => {
     e.preventDefault();
@@ -11,4 +13,8 @@ export const SearchForm = ({ showMovies }) => {
       <button>Search</button>
     </form>
   );
+};
+
+SearchForm.propTypes = {
+  showMovies: PropTypes.func,
 };
