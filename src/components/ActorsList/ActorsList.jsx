@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import { ActorCard } from 'components/ActorCard/ActorCard';
+import { List } from './ActorsList.styled';
 
 export const ActorsList = ({ actors }) => {
   return (
-    <ul>
+    <List>
       {actors.map(actor => {
         return (
           <li key={actor.id}>
@@ -15,7 +16,7 @@ export const ActorsList = ({ actors }) => {
           </li>
         );
       })}
-    </ul>
+    </List>
   );
 };
 
