@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+import { Title } from './Heading.styled';
 
-export const Heading = ({ text }) => <h1>{text}</h1>;
+export const Heading = ({ text }) => <Title>{text}</Title>;
 
 Heading.propTypes = {
   text: PropTypes.string,

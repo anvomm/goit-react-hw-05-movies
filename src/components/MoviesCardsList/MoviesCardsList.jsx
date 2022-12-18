@@ -1,20 +1,21 @@
 import PropTypes from 'prop-types';
 import { MovieCard } from 'components/MovieCard/MovieCard';
+import { MoviesList, Card } from './MoviesCardsList.styled';
 
 export const MoviesCardsList = ({ movies }) => {
   return (
-    <ul>
-      {movies.map(({ id, title, poster_path, release_date }) => (
-        <li key={id}>
+    <MoviesList>
+      {movies.map(({ id, title, poster_path, vote_average }) => (
+        <Card key={id}>
           <MovieCard
             id={id}
             title={title}
             poster={poster_path}
-            date={release_date}
+            rating={vote_average}
           />
-        </li>
+        </Card>
       ))}
-    </ul>
+    </MoviesList>
   );
 };
 

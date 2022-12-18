@@ -6,6 +6,7 @@ export const Nav = styled.nav`
   width: 1020px;
   height: 80px;
   padding: 0 70px;
+  margin: 0 auto;
 `;
 
 export const NavList = styled.ul`
