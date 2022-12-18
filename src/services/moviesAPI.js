@@ -69,3 +69,16 @@ export async function getMovieReviews(id) {
     console.error(error);
   }
 }
+
+export async function getTrendingPersons() {
+  try {
+    const { data } = await axios('3/trending/person/week', {
+      params: {
+        api_key: API_KEY,
+      },
+    });
+    return data.results;
+  } catch (error) {
+    console.error(error);
+  }
+}

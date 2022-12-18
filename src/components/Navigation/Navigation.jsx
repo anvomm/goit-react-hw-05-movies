@@ -20,6 +20,7 @@ export const Navigation = () => {
             <RiMovie2Fill />
           </IconContext.Provider>
         </Logo>
+        <NavLinks to="/stars">Movie stars</NavLinks>
       </NavWrap>
     </Nav>
   );
