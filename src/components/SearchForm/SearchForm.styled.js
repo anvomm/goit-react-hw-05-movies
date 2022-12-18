@@ -30,4 +30,10 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   background-color: inherit;
+  transition: transform 250ms linear;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.15);
+  }
 `;
