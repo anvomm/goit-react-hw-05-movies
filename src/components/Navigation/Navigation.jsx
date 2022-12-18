@@ -1,16 +1,26 @@
-import { NavLink } from 'react-router-dom';
+import { IconContext } from 'react-icons';
+import { RiMovie2Fill } from 'react-icons/ri';
+import { Nav, NavList, Logo, NavWrap, NavLinks } from './Navigation.styled';
 
 export const Navigation = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/movies">Movies</NavLink>
-        </li>
-      </ul>
-    </nav>
+    <Nav>
+      <NavWrap>
+        <NavList>
+          <li>
+            <NavLinks to="/">Home</NavLinks>
+          </li>
+          <li>
+            <NavLinks to="/movies">Movies</NavLinks>
+          </li>
+        </NavList>
+        <Logo to="/">
+          MyMovie
+          <IconContext.Provider value={{ size: 30, color: '#99a9ff' }}>
+            <RiMovie2Fill />
+          </IconContext.Provider>
+        </Logo>
+      </NavWrap>
+    </Nav>
   );
 };

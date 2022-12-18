@@ -13,7 +13,7 @@ export const App = () => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Rubik'],
+        families: ['Rubik', 'Poppins'],
       },
     });
   }, []);
