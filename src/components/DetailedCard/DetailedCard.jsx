@@ -1,5 +1,16 @@
 import PropTypes from 'prop-types';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import {
+  Title,
+  Image,
+  Wrap,
+  SmallWrap,
+  Span,
+  Text,
+  AdditionalTitle,
+  List,
+  AdditionalLink,
+} from './DetailedCard.styled';
 
 export const DetailedCard = ({ movieData }) => {
   const date = () => new Date(movieData.release_date).getFullYear();
@@ -18,33 +29,46 @@ export const DetailedCard = ({ movieData }) => {
   const location = useLocation();
 
   return (
-    <div>
-      <h2>
+    <>
+      <Title>
         {movieData.title} ({date()})
-      </h2>
-      <img
-        src={getImgUrl(movieData.poster_path)}
-        alt={movieData.title}
-        width={300}
-      />
-      <p>User score: {Math.round(movieData.vote_average * 10)}%</p>
-      <p>Overview: {movieData.overview}</p>
-      <p>Genres: {genres}</p>
-      <h3>Additional information</h3>
-      <ul>
+      </Title>
+      <Wrap>
+        <Image
+          src={getImgUrl(movieData.poster_path)}
+          alt={movieData.title}
+          width={350}
+        />
+        <SmallWrap>
+          <Text>
+            <Span>User score: </Span>
+            {Math.round(movieData.vote_average * 10)}%
+          </Text>
+          <Text>
+            <Span>Overview: </Span>
+            {movieData.overview}
+          </Text>
+          <Text>
+            <Span>Genres: </Span>
+            {genres}
+          </Text>
+        </SmallWrap>
+      </Wrap>
+      <AdditionalTitle>Additional information</AdditionalTitle>
+      <List>
         <li>
-          <Link to={'cast'} state={location.state}>
+          <AdditionalLink to={'cast'} state={location.state}>
             Cast
-          </Link>
+          </AdditionalLink>
         </li>
         <li>
-          <Link to={'reviews'} state={location.state}>
+          <AdditionalLink to={'reviews'} state={location.state}>
             Reviews
-          </Link>
+          </AdditionalLink>
         </li>
-      </ul>
+      </List>
       <Outlet />
-    </div>
+    </>
   );
 };
 

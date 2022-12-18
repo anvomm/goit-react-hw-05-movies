@@ -10,6 +10,7 @@ export const Form = styled.form`
 export const Input = styled.input`
   width: 357px;
   padding-left: 35px;
+  margin-bottom: 50px;
   font-size: 18px;
   outline: none;
   background-color: inherit;
@@ -31,6 +32,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   background-color: inherit;
   transition: transform 250ms linear;
+  margin-bottom: 50px;
 
   &:hover,
   &:focus {
