@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
 import { StarCard } from 'components/StarCard/StarCard';
+import { List, Card } from 'components/MoviesCardsList/MoviesCardsList.styled';
 
 export const StarsCardList = ({ stars }) => {
   return (
-    <ul>
+    <List>
       {stars.map(({ id, name, profile_path }) => {
         return (
-          <li key={id}>
+          <Card key={id}>
             <StarCard name={name} image={profile_path} />
-          </li>
+          </Card>
         );
       })}
-    </ul>
+    </List>
   );
 };
 

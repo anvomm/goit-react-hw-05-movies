@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { MovieCard } from 'components/MovieCard/MovieCard';
-import { MoviesList, Card } from './MoviesCardsList.styled';
+import { List, Card } from './MoviesCardsList.styled';
 
 export const MoviesCardsList = ({ movies }) => {
   return (
-    <MoviesList>
+    <List>
       {movies.map(({ id, title, poster_path, vote_average }) => (
         <Card key={id}>
           <MovieCard
@@ -15,7 +15,7 @@ export const MoviesCardsList = ({ movies }) => {
           />
         </Card>
       ))}
-    </MoviesList>
+    </List>
   );
 };
 
