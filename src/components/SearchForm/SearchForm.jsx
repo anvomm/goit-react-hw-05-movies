@@ -1,4 +1,7 @@
 import PropTypes from 'prop-types';
+import { IconContext } from 'react-icons';
+import { BiSearchAlt } from 'react-icons/bi';
+import { Input, Button, Form } from './SearchForm.styled';
 
 export const SearchForm = ({ showMovies }) => {
   const handleSubmit = e => {
@@ -8,10 +11,19 @@ export const SearchForm = ({ showMovies }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="query" />
-      <button>Search</button>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <Input type="text" name="query" autoComplete="off" required />
+      <Button>
+        <IconContext.Provider
+          value={{
+            size: 35,
+            color: '#99a9ff',
+          }}
+        >
+          <BiSearchAlt />
+        </IconContext.Provider>
+      </Button>
+    </Form>
   );
 };
 
