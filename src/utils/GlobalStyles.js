@@ -33,4 +33,9 @@ body {
     color: #fff;
     font-family: 'Rubik';
 }
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 `;

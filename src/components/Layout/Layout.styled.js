@@ -21,10 +21,7 @@ export const Gradient = styled.div`
 export const Footer = styled.footer`
   width: 100%;
   height: 108px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  margin-top: auto;
 `;
 
 export const FooterText = styled.footer`
