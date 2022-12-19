@@ -34,7 +34,7 @@ export const ReviewsSubPage = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {reviews.length == 0 && !isLoading ? (
+      {reviews.length === 0 && !isLoading ? (
         <Notification>
           We don't have any reviews for this movie yet :(
         </Notification>
