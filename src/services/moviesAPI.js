@@ -25,6 +25,7 @@ export async function getMovieByQuery(query, page = 1) {
         page,
       },
     });
+    console.log(data);
     return data;
   } catch (error) {
     console.error(error);

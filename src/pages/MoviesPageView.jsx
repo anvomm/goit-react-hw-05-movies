@@ -8,6 +8,8 @@ import { Pagination } from 'components/Pagination/Pagination.styled';
 import { IconContext } from 'react-icons';
 import { RxDoubleArrowLeft } from 'react-icons/rx';
 import { RxDoubleArrowRight } from 'react-icons/rx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const MoviesPageView = () => {
   const [movies, setMovies] = useState([]);
@@ -23,6 +25,7 @@ export const MoviesPageView = () => {
       setIsLoading(true);
       const arrayOfMovies = await getMovieByQuery(queryParam, page);
       const newPageCount = arrayOfMovies.total_pages;
+
       const arrayOfMovieTitles = arrayOfMovies.results.map(
         ({ id, title, poster_path, vote_average, release_date }) => ({
           id,
@@ -98,6 +101,18 @@ export const MoviesPageView = () => {
           forcePage={page - 1}
         />
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 };
