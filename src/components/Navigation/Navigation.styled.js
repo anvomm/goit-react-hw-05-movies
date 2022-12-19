@@ -2,22 +2,37 @@ import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
-  background-color: #232526;
-  width: 1020px;
+  width: 100%;
   height: 80px;
-  padding: 0 70px;
-  margin: 0 auto;
+  padding: 0 20px;
+  background-color: #232526;
+
+  @media (min-width: 768px) {
+    width: 650px;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1020px;
+    padding: 0 70px;
+  }
 `;
 
 export const NavList = styled.ul`
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  display: none;
+
+  @media (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
 `;
 
 export const NavWrap = styled.div`
   height: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -29,14 +44,29 @@ export const Logo = styled(Link)`
   font-size: 26px;
   font-weight: 500;
   text-transform: lowercase;
-  margin: 0 auto;
+
+  @media (min-width: 1280px) {
+    margin: 0 auto;
+  }
 `;
 
 export const NavLinks = styled(NavLink)`
-  font-size: 18px;
-  text-transform: lowercase;
+  display: none;
 
-  &.active {
-    color: #99a9ff;
+  @media (min-width: 1280px) {
+    display: block;
+    font-size: 18px;
+    text-transform: lowercase;
+
+    &.active {
+      color: #99a9ff;
+    }
+  }
+`;
+export const MobileMenuButton = styled.button`
+  cursor: pointer;
+  background-color: inherit;
+  @media (min-width: 1280px) {
+    display: none;
   }
 `;
