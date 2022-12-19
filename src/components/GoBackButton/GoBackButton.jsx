@@ -14,7 +14,7 @@ export const GoBackButton = () => {
         navigate(location?.state?.from ?? '/');
       }}
     >
-      <IconContext.Provider value={{ size: 30, color: '#5CE4CF' }}>
+      <IconContext.Provider value={{ size: 35, color: '#5CE4CF' }}>
         <HiOutlineArrowNarrowLeft />
       </IconContext.Provider>
       Go back

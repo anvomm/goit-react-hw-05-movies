@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { getMovieActors } from 'services/moviesAPI';
 import { ActorsList } from 'components/ActorsList/ActorsList';
+import { Notification } from 'components/Review/Review.styled';
 
 export const CastSubPage = () => {
   const { movieId } = useParams();
@@ -31,6 +32,6 @@ export const CastSubPage = () => {
   return actors.length > 0 ? (
     <ActorsList actors={actors} />
   ) : (
-    <p>Unfortunately no actors was found</p>
+    <Notification>Unfortunately no actors was found :(</Notification>
   );
 };

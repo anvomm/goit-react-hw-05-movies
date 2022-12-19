@@ -41,15 +41,15 @@ export const DetailedCard = ({ movieData }) => {
         />
         <SmallWrap>
           <Text>
-            <Span>User score: </Span>
+            <Span>user score: </Span>
             {Math.round(movieData.vote_average * 10)}%
           </Text>
           <Text>
-            <Span>Overview: </Span>
+            <Span>overview: </Span>
             {movieData.overview}
           </Text>
           <Text>
-            <Span>Genres: </Span>
+            <Span>genres: </Span>
             {genres}
           </Text>
         </SmallWrap>

@@ -6,6 +6,7 @@ export const Title = styled.h2`
   margin: 25px 0;
   font-size: 28px;
   font-weight: 500;
+  color: #99a9ff;
 `;
 
 export const Image = styled.img`
@@ -27,18 +28,36 @@ export const SmallWrap = styled.div`
 export const Span = styled.span`
   font-weight: 500;
   font-size: 24px;
+  letter-spacing: 0.1em;
+  color: #99a9ff;
 `;
 
 export const Text = styled.p`
   font-size: 20px;
-  line-height: 1.66;
+  line-height: 1.45;
 `;
 
 export const AdditionalTitle = styled.h3`
   text-align: center;
   margin-bottom: 30px;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 28px;
+  color: #99a9ff;
+
+  &::before {
+    content: '';
+    display: block;
+    margin: 0 auto 25px auto;
+    width: 750px;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      rgba(128, 147, 255, 0.25) 15%,
+      rgba(125, 155, 250, 1) 40%,
+      rgba(96, 219, 212, 0.8) 65%,
+      rgba(92, 228, 207, 0.15)
+    );
+  }
 `;
 
 export const List = styled.ul`
@@ -49,6 +68,7 @@ export const List = styled.ul`
 `;
 
 export const AdditionalLink = styled(Link)`
-  font-size: 20px;
+  font-size: 24px;
   text-transform: lowercase;
+  color: #5ce4cf;
 `;

@@ -7,5 +7,5 @@ export const BackButton = styled.button`
   background-color: inherit;
   text-transform: uppercase;
   color: #99a9ff;
-  font-size: 16px;
+  font-size: 18px;
 `;

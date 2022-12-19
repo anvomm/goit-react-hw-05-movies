@@ -1,10 +1,15 @@
 import PropTypes from 'prop-types';
+import { Span, Text } from 'components/DetailedCard/DetailedCard.styled';
+import { Title } from './Review.styled';
 
 export const Review = ({ author, content }) => {
   return (
     <>
-      <h3>Author: {author}</h3>
-      <p>{content}</p>
+      <Title>
+        <Span>Author: </Span>
+        {author}
+      </Title>
+      <Text>{content}</Text>
     </>
   );
 };
