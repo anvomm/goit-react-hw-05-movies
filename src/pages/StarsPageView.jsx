@@ -29,7 +29,7 @@ export const StarsPageView = () => {
   }, []);
   return (
     <>
-      <Heading text={'Movie stars of the week'} />
+      <Heading text={'TOP-20 movie stars of the week'} />
       {isLoading && <Loader />}
       <StarsCardList stars={stars} />
     </>
