@@ -8,7 +8,7 @@ import { Pagination } from 'components/Pagination/Pagination.styled';
 import { IconContext } from 'react-icons';
 import { RxDoubleArrowLeft } from 'react-icons/rx';
 import { RxDoubleArrowRight } from 'react-icons/rx';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { StyledContainer } from 'components/DetailedCard/DetailedCard.styled';
 
