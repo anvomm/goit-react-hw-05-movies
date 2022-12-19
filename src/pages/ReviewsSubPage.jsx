@@ -3,32 +3,44 @@ import { useState, useEffect, useRef } from 'react';
 import { getMovieReviews } from 'services/moviesAPI';
 import { ReviewList } from 'components/ReviewList/ReviewList';
 import { Notification } from 'components/Review/Review.styled';
+import { Loader } from 'components/Loader/Loader';
 
 export const ReviewsSubPage = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const doOneFetch = useRef(null);
 
   useEffect(() => {
     const loadReviews = async () => {
+      setIsLoading(true);
       const data = await getMovieReviews(movieId);
       const arrayOfReviews = data.map(({ author, content, id }) => ({
         author,
         content,
         id,
       }));
-      return arrayOfReviews;
+
+      setReviews(arrayOfReviews);
+      setIsLoading(false);
     };
 
     if (doOneFetch.current === null) {
-      loadReviews().then(setReviews);
+      loadReviews();
       doOneFetch.current = 1;
     }
   }, [movieId]);
 
-  return reviews.length > 0 ? (
-    <ReviewList reviews={reviews} />
-  ) : (
-    <Notification>We don't have any reviews for this movie yet :(</Notification>
+  return (
+    <>
+      {isLoading && <Loader />}
+      {reviews.length == 0 && !isLoading ? (
+        <Notification>
+          We don't have any reviews for this movie yet :(
+        </Notification>
+      ) : (
+        <ReviewList reviews={reviews} />
+      )}
+    </>
   );
 };

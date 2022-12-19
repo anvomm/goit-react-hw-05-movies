@@ -30,9 +30,11 @@ export const DetailedCard = ({ movieData }) => {
 
   return (
     <>
-      <Title>
-        {movieData.title} ({date()})
-      </Title>
+      {movieData.release_date && (
+        <Title>
+          {movieData.title} ({date()})
+        </Title>
+      )}
       <Wrap>
         <Image
           src={getImgUrl(movieData.poster_path)}
@@ -40,33 +42,44 @@ export const DetailedCard = ({ movieData }) => {
           width={350}
         />
         <SmallWrap>
-          <Text>
-            <Span>user score: </Span>
-            {Math.round(movieData.vote_average * 10)}%
-          </Text>
-          <Text>
-            <Span>overview: </Span>
-            {movieData.overview}
-          </Text>
-          <Text>
-            <Span>genres: </Span>
-            {genres}
-          </Text>
+          {movieData.vote_average && (
+            <Text>
+              <Span>user score: </Span>
+              {Math.round(movieData.vote_average * 10)}%
+            </Text>
+          )}
+          {movieData.overview && (
+            <Text>
+              <Span>overview: </Span>
+              {movieData.overview}
+            </Text>
+          )}
+          {movieData.genres && (
+            <Text>
+              <Span>genres: </Span>
+              {genres}
+            </Text>
+          )}
         </SmallWrap>
       </Wrap>
-      <AdditionalTitle>Additional information</AdditionalTitle>
-      <List>
-        <li>
-          <AdditionalLink to={'cast'} state={location.state}>
-            Cast
-          </AdditionalLink>
-        </li>
-        <li>
-          <AdditionalLink to={'reviews'} state={location.state}>
-            Reviews
-          </AdditionalLink>
-        </li>
-      </List>
+      {movieData.title && (
+        <div>
+          <AdditionalTitle>Additional information</AdditionalTitle>
+          <List>
+            <li>
+              <AdditionalLink to={'cast'} state={location.state}>
+                Cast
+              </AdditionalLink>
+            </li>
+            <li>
+              <AdditionalLink to={'reviews'} state={location.state}>
+                Reviews
+              </AdditionalLink>
+            </li>
+          </List>
+        </div>
+      )}
+
       <Outlet />
     </>
   );
