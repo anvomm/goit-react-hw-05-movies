@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 export const Title = styled.h2`
   text-align: center;
@@ -71,4 +72,23 @@ export const AdditionalLink = styled(Link)`
   font-size: 24px;
   text-transform: lowercase;
   color: #5ce4cf;
+`;
+
+export const StyledContainer = styled(ToastContainer)`
+  .Toastify__toast {
+    background-color: #232526;
+    color: #5ce4cf;
+  }
+  .Toastify__close-button {
+    color: #5ce4cf;
+  }
+  .Toastify__progress-bar {
+    background: linear-gradient(
+      to right,
+      rgba(128, 147, 255, 0.25),
+      rgba(125, 155, 250, 1),
+      rgba(96, 219, 212, 0.8),
+      rgba(92, 228, 207, 0.15)
+    );
+  }
 `;

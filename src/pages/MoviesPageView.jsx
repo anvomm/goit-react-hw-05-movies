@@ -10,6 +10,7 @@ import { RxDoubleArrowLeft } from 'react-icons/rx';
 import { RxDoubleArrowRight } from 'react-icons/rx';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { StyledContainer } from 'components/DetailedCard/DetailedCard.styled';
 
 export const MoviesPageView = () => {
   const [movies, setMovies] = useState([]);
@@ -119,7 +120,7 @@ export const MoviesPageView = () => {
           forcePage={page - 1}
         />
       )}
-      <ToastContainer />
+      <StyledContainer />
     </>
   );
 };
