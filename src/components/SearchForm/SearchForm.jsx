@@ -16,7 +16,7 @@ export const SearchForm = ({ showMovies }) => {
   };
 
   const notifyAboutWhitespace = () => {
-    toast.info('Your search query should contain at least one letter!', {
+    toast('Your search query should contain at least one letter!', {
       position: 'top-center',
       autoClose: 3000,
       hideProgressBar: false,

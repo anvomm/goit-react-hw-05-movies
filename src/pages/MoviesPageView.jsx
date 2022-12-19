@@ -8,7 +8,7 @@ import { Pagination } from 'components/Pagination/Pagination.styled';
 import { IconContext } from 'react-icons';
 import { RxDoubleArrowLeft } from 'react-icons/rx';
 import { RxDoubleArrowRight } from 'react-icons/rx';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const MoviesPageView = () => {
@@ -25,6 +25,11 @@ export const MoviesPageView = () => {
       setIsLoading(true);
       const arrayOfMovies = await getMovieByQuery(queryParam, page);
       const newPageCount = arrayOfMovies.total_pages;
+
+      if (arrayOfMovies.results.length === 0) {
+        setIsLoading(false);
+        return notifyAboutWrongQuery();
+      }
 
       const arrayOfMovieTitles = arrayOfMovies.results.map(
         ({ id, title, poster_path, vote_average, release_date }) => ({
@@ -54,6 +59,19 @@ export const MoviesPageView = () => {
     setSearchParams({ query });
     setMovies([]);
     setPage(1);
+  };
+
+  const notifyAboutWrongQuery = () => {
+    toast('No pictures found, please try another search query!', {
+      position: 'top-center',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+    });
   };
 
   return (
@@ -101,18 +119,7 @@ export const MoviesPageView = () => {
           forcePage={page - 1}
         />
       )}
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
+      <ToastContainer />
     </>
   );
 };
