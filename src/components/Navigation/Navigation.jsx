@@ -1,8 +1,24 @@
 import { IconContext } from 'react-icons';
 import { RiMovie2Fill } from 'react-icons/ri';
-import { Nav, NavList, Logo, NavWrap, NavLinks } from './Navigation.styled';
+import { CgMenuGridR } from 'react-icons/cg';
+import { useState } from 'react';
+import {
+  Nav,
+  NavList,
+  Logo,
+  NavWrap,
+  NavLinks,
+  MobileMenuButton,
+} from './Navigation.styled';
+import { MobileMenu } from 'components/MobileMenu/MobileMenu';
 
 export const Navigation = () => {
+  const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
+
+  const closeMenu = () => {
+    setMobileMenuOpened(!mobileMenuOpened);
+  };
+
   return (
     <Nav>
       <NavWrap>
@@ -21,7 +37,20 @@ export const Navigation = () => {
           </IconContext.Provider>
         </Logo>
         <NavLinks to="/stars">Movie stars</NavLinks>
+        <MobileMenuButton
+          onClick={() => setMobileMenuOpened(!mobileMenuOpened)}
+        >
+          <IconContext.Provider value={{ size: 30, color: '#99a9ff' }}>
+            <CgMenuGridR />
+          </IconContext.Provider>
+        </MobileMenuButton>
       </NavWrap>
+      {mobileMenuOpened && (
+        <MobileMenu
+          closeMenu={closeMenu}
+          onClick={() => setMobileMenuOpened(!mobileMenuOpened)}
+        />
+      )}
     </Nav>
   );
 };
