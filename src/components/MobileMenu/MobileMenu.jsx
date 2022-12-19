@@ -1,10 +1,4 @@
-import {
-  MobNav,
-  List,
-  ListItem,
-  NavLinkStyled,
-  Wrap,
-} from './MobileMenu.styled';
+import { MobNav, List, NavLinkStyled, Wrap } from './MobileMenu.styled';
 import { IconContext } from 'react-icons';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 
