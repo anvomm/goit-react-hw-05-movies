@@ -38,4 +38,24 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+li.active a {
+    color: #1D1D1D;
+  }
+
+  li.page-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  li.page-item.active {
+    
+    border-radius: 50%;
+    background-color: #99a9ff;
+    
+  }
 `;
