@@ -45,6 +45,7 @@ export const List = styled.ul`
   display: flex;
   justify-content: center;
   gap: 50px;
+  margin-bottom: 50px;
 `;
 
 export const AdditionalLink = styled(Link)`

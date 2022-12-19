@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { Image } from 'components/MovieCard/MovieCard.styled';
+import { CardTitle, Text, ActorCardBottom } from './ActorCard.styled';
 
 export const ActorCard = ({ name, picture, character }) => {
   const getImgUrl = image => {
@@ -9,9 +11,11 @@ export const ActorCard = ({ name, picture, character }) => {
   };
   return (
     <>
-      <img src={getImgUrl(picture)} alt={name} width="200" />
-      <h3>{name}</h3>
-      <p>{character}</p>
+      <Image src={getImgUrl(picture)} alt={name} width="200" />
+      <ActorCardBottom>
+        <CardTitle>{name}</CardTitle>
+        <Text>{character}</Text>
+      </ActorCardBottom>
     </>
   );
 };
