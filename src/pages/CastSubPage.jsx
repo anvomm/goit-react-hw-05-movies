@@ -36,7 +36,7 @@ export const CastSubPage = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {actors.length == 0 && !isLoading ? (
+      {actors.length === 0 && !isLoading ? (
         <Notification>Unfortunately no actors was found :(</Notification>
       ) : (
         <ActorsList actors={actors} />
