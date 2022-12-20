@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 export const Image = styled.img`
   border-radius: 5px 5px 0 0;
-  @media (min-width: 480px) {
+  width: 200px;
+  @media (min-width: 300px) {
     width: 285px;
   }
 `;
@@ -27,7 +28,7 @@ export const CardLink = styled(Link)`
 export const CardBottom = styled.div`
   padding: 20px;
   flex-grow: 1;
-  max-height: 100px;
+  max-height: 120px;
 `;
 
 export const CardTitle = styled.h2`

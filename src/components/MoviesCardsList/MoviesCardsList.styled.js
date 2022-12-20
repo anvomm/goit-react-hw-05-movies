@@ -15,10 +15,7 @@ export const Card = styled.li`
   justify-content: space-between;
   border-radius: 5px;
 
-  @media (min-width: 480px) {
+  @media (min-width: 300px) {
     width: 285px;
-  }
-
-  @media (min-width: 1280px) {
   }
 `;
