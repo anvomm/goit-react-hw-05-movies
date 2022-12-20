@@ -63,7 +63,7 @@ const MoviesPage = () => {
   };
 
   const notifyAboutWrongQuery = () => {
-    toast('No pictures found, please try another search query!', {
+    toast('No movies found, please try another search query!', {
       position: 'top-center',
       autoClose: 3000,
       hideProgressBar: false,
