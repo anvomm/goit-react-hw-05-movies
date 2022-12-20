@@ -78,6 +78,7 @@ export const StyledContainer = styled(ToastContainer)`
   .Toastify__toast {
     background-color: #232526;
     color: #5ce4cf;
+    border: 1px solid #99a9ff;
   }
   .Toastify__close-button {
     color: #5ce4cf;
