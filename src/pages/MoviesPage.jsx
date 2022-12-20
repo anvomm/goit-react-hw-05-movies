@@ -113,7 +113,6 @@ const MoviesPage = () => {
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
           disableInitialCallback={true}
-          initialPage={0}
           onPageChange={handlePageChange}
           containerClassName="pagination"
           activeClassName="active"
