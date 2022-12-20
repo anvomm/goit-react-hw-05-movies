@@ -4,52 +4,83 @@ import { ToastContainer } from 'react-toastify';
 
 export const Title = styled.h2`
   text-align: center;
-  margin: 25px 0;
+  margin: 35px 0 25px 0;
   font-size: 28px;
   font-weight: 500;
   color: #99a9ff;
+
+  @media (min-width: 768px) {
+    margin: 25px 0;
+  }
 `;
 
 export const Image = styled.img`
   border-radius: 5px;
+  @media (max-width: 767px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const Wrap = styled.div`
-  display: flex;
-  gap: 50px;
-  margin-bottom: 30px;
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const SmallWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  gap: 10px;
 `;
 
 export const Span = styled.span`
   font-weight: 500;
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 0.1em;
   color: #99a9ff;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 24px;
+  }
 `;
 
 export const Text = styled.p`
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.45;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
 `;
 
 export const AdditionalTitle = styled.h3`
   text-align: center;
   margin-bottom: 30px;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 24px;
   color: #99a9ff;
+
+  @media (min-width: 768px) {
+    font-size: 26px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 28px;
+  }
 
   &::before {
     content: '';
     display: block;
-    margin: 0 auto 25px auto;
-    width: 750px;
+    margin: 25px auto;
+    width: 100%;
     height: 1px;
     background: linear-gradient(
       to right,
@@ -58,6 +89,11 @@ export const AdditionalTitle = styled.h3`
       rgba(96, 219, 212, 0.8) 65%,
       rgba(92, 228, 207, 0.15)
     );
+
+    @media (min-width: 768px) {
+      width: 750px;
+      margin: 0 auto 25px auto;
+    }
   }
 `;
 
@@ -69,9 +105,16 @@ export const List = styled.ul`
 `;
 
 export const AdditionalLink = styled(Link)`
-  font-size: 24px;
+  font-size: 20px;
   text-transform: lowercase;
   color: #5ce4cf;
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 24px;
+  }
 `;
 
 export const StyledContainer = styled(ToastContainer)`
