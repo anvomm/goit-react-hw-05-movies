@@ -8,6 +8,9 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
+  @media (max-width: 479px) {
+    width: 150px;
+  }
   width: 357px;
   padding-left: 35px;
   margin-bottom: 50px;

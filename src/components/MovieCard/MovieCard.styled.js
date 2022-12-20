@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 export const Image = styled.img`
   border-radius: 5px 5px 0 0;
+  @media (min-width: 480px) {
+    width: 285px;
+  }
 `;
 
 export const CardLink = styled(Link)`

@@ -44,11 +44,21 @@ li.active a {
   }
 
   li.page-item {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+     @media (min-width: 768px) {
+    width: 35px;
+    height: 35px;
+  }
+
+    @media (min-width: 1280px) {
+    width: 40px;
+    height: 40px;
+  }
 
   }
 

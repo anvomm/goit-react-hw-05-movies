@@ -22,7 +22,7 @@ export const MovieCard = ({ id, title, poster, rating }) => {
 
   return (
     <CardLink to={`/movies/${id}`} state={{ from: location }}>
-      <Image src={getImgUrl(poster)} alt={title} width={285} />
+      <Image src={getImgUrl(poster)} alt={title} width={200} />
       <CardBottom>
         <CardTitle>{title}</CardTitle>
         <Rating>
