@@ -4,7 +4,7 @@ import { Heading } from 'components/Heading/Heading';
 import { StarsCardList } from 'components/StarsCardList/StarsCardList';
 import { Loader } from 'components/Loader/Loader';
 
-export const StarsPageView = () => {
+const StarsPage = () => {
   const [stars, setStars] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const doOneFetch = useRef(null);
@@ -35,3 +35,5 @@ export const StarsPageView = () => {
     </>
   );
 };
+
+export default StarsPage;

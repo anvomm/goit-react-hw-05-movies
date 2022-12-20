@@ -5,7 +5,7 @@ import { ReviewList } from 'components/ReviewList/ReviewList';
 import { Notification } from 'components/Review/Review.styled';
 import { Loader } from 'components/Loader/Loader';
 
-export const ReviewsSubPage = () => {
+const ReviewsSubPage = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -44,3 +44,5 @@ export const ReviewsSubPage = () => {
     </>
   );
 };
+
+export default ReviewsSubPage;

@@ -5,7 +5,7 @@ import { ActorsList } from 'components/ActorsList/ActorsList';
 import { Notification } from 'components/Review/Review.styled';
 import { Loader } from 'components/Loader/Loader';
 
-export const CastSubPage = () => {
+const CastSubPage = () => {
   const { movieId } = useParams();
   const doOneFetch = useRef(null);
   const [actors, setActors] = useState([]);
@@ -44,3 +44,5 @@ export const CastSubPage = () => {
     </>
   );
 };
+
+export default CastSubPage;

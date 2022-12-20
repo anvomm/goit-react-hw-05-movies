@@ -5,7 +5,7 @@ import { DetailedCard } from 'components/DetailedCard/DetailedCard';
 import { GoBackButton } from 'components/GoBackButton/GoBackButton';
 import { Loader } from 'components/Loader/Loader';
 
-export const MovieDetailsPageView = () => {
+const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -32,3 +32,5 @@ export const MovieDetailsPageView = () => {
     </>
   );
 };
+
+export default MovieDetailsPage;

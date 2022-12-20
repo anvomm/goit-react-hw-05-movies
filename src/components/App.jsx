@@ -1,16 +1,31 @@
+import { lazy, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import WebFont from 'webfontloader';
-import { useEffect } from 'react';
 import { Layout } from './Layout/Layout';
-import { HomePageView } from 'pages/HomePageView';
-import { MoviesPageView } from 'pages/MoviesPageView';
-import { StarsPageView } from 'pages/StarsPageView';
-import { MovieDetailsPageView } from 'pages/MovieDetailsPageView';
-import { CastSubPage } from 'pages/CastSubPage';
-import { ReviewsSubPage } from 'pages/ReviewsSubPage';
 import { GlobalStyles } from 'utils/GlobalStyles';
 
 export const App = () => {
+  const HomePage = lazy(() =>
+    import('pages/HomePage' /* webpackChunkName: "home-page" */)
+  );
+  const MoviesPage = lazy(() =>
+    import('pages/MoviesPage' /* webpackChunkName: "movies-page" */)
+  );
+  const StarsPage = lazy(() =>
+    import('pages/StarsPage' /* webpackChunkName: "stars-page" */)
+  );
+  const MovieDetailsPage = lazy(() =>
+    import(
+      'pages/MovieDetailsPage' /* webpackChunkName: "movie-details-page" */
+    )
+  );
+  const CastSubPage = lazy(() =>
+    import('pages/CastSubPage' /* webpackChunkName: "cast-subpage" */)
+  );
+  const ReviewsSubPage = lazy(() =>
+    import('pages/ReviewsSubPage' /* webpackChunkName: "reviews-subpage" */)
+  );
+
   useEffect(() => {
     WebFont.load({
       google: {
@@ -23,14 +38,14 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePageView />} />
-          <Route path="movies" element={<MoviesPageView />} />
-          <Route path="stars" element={<StarsPageView />} />
-          <Route path="movies/:movieId" element={<MovieDetailsPageView />}>
+          <Route index element={<HomePage />} />
+          <Route path="movies" element={<MoviesPage />} />
+          <Route path="stars" element={<StarsPage />} />
+          <Route path="movies/:movieId" element={<MovieDetailsPage />}>
             <Route path="cast" element={<CastSubPage />} />
             <Route path="reviews" element={<ReviewsSubPage />} />
           </Route>
-          <Route path="*" element={<HomePageView />} />
+          <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
       <GlobalStyles />

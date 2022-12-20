@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Outlet, useLocation } from 'react-router-dom';
 import {
@@ -11,6 +12,7 @@ import {
   List,
   AdditionalLink,
 } from './DetailedCard.styled';
+import { Loader } from 'components/Loader/Loader';
 
 export const DetailedCard = ({ movieData }) => {
   const date = () => new Date(movieData.release_date).getFullYear();
@@ -79,8 +81,9 @@ export const DetailedCard = ({ movieData }) => {
           </List>
         </div>
       )}
-
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
