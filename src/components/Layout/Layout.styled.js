@@ -29,4 +29,5 @@ export const Footer = styled.footer`
 export const FooterText = styled.p`
   margin-top: 60px;
   text-align: center;
+  font-size: 16px;
 `;

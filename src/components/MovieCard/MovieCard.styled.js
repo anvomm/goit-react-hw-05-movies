@@ -6,7 +6,9 @@ export const Image = styled.img`
 `;
 
 export const CardLink = styled(Link)`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   width: 100%;
   border-radius: 5px;
@@ -20,8 +22,9 @@ export const CardLink = styled(Link)`
 `;
 
 export const CardBottom = styled.div`
-  padding: 15px 20px;
+  padding: 20px;
   flex-grow: 1;
+  max-height: 100px;
 `;
 
 export const CardTitle = styled.h2`

@@ -4,21 +4,38 @@ import { NavLink } from 'react-router-dom';
 export const MobNav = styled.nav`
   height: 160px;
   width: 300px;
-  padding-top: 20px;
+  padding: 30px;
   background-color: #1d1d1d;
 
+  @media (min-width: 768px) {
+    padding-right: 80px;
+  }
+  @media (min-width: 840px) {
+    padding-right: 30px;
+  }
   @media (min-width: 1280px) {
     display: none;
   }
 `;
 
 export const Wrap = styled.div`
+  position: fixed;
+  z-index: 1000;
+  top: 100px;
+  right: 0;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: flex-end;
   background-color: #1d1d1d;
-  position: relative;
-  z-index: 1000;
+
+  @media (min-width: 840px) {
+    width: 768px;
+    right: calc((100vw - 768px) / 2);
+  }
+  @media (min-width: 1280px) {
+    display: none;
+  }
 `;
 
 export const List = styled.ul`

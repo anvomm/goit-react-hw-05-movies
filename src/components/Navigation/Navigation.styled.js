@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
-  width: 100%;
   height: 80px;
   padding: 0 20px;
   background-color: #232526;
@@ -41,12 +40,17 @@ export const Logo = styled(Link)`
   align-items: center;
   gap: 3px;
   font-family: 'Poppins';
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 500;
   text-transform: lowercase;
 
+  @media (min-width: 768px) {
+    font-size: 23px;
+  }
+
   @media (min-width: 1280px) {
     margin: 0 auto;
+    font-size: 26px;
   }
 `;
 
