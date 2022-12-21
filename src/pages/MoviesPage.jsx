@@ -79,7 +79,7 @@ const MoviesPage = () => {
       <SearchForm showMovies={showMoviesOnSearch} />
       {isLoading && <Loader />}
       {movies && <MoviesCardsList movies={movies} />}
-      {movies.length > 0 && (
+      {movies.length > 0 && pageCount > 1 && (
         <Pagination
           previousLabel={
             <IconContext.Provider
