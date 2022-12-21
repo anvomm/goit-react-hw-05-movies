@@ -1,10 +1,12 @@
 import { MobNav, List, NavLinkStyled, Wrap } from './MobileMenu.styled';
+import PropTypes from 'prop-types';
 import { IconContext } from 'react-icons';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { useLockBodyScroll } from '@fransvilhelm/hooks';
 
 export const MobileMenu = ({ closeMenu }) => {
   useLockBodyScroll();
+
   return (
     <Wrap>
       <MobNav>
@@ -37,4 +39,8 @@ export const MobileMenu = ({ closeMenu }) => {
       </MobNav>
     </Wrap>
   );
+};
+
+MobileMenu.propTypes = {
+  closeMenu: PropTypes.func,
 };
