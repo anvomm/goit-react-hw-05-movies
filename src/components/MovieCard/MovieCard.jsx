@@ -29,7 +29,7 @@ export const MovieCard = ({ id, title, poster, rating }) => {
           <IconContext.Provider
             value={{
               size: 25,
-              color: Math.round(rating) >= 1 ? '#FF971D' : 'grey',
+              color: Math.round(rating / 2) >= 1 ? '#FF971D' : 'grey',
             }}
           >
             <HiStar />
@@ -37,7 +37,7 @@ export const MovieCard = ({ id, title, poster, rating }) => {
           <IconContext.Provider
             value={{
               size: 25,
-              color: Math.round(rating) >= 2 ? '#FF971D' : 'grey',
+              color: Math.round(rating / 2) >= 2 ? '#FF971D' : 'grey',
             }}
           >
             <HiStar />
@@ -45,7 +45,7 @@ export const MovieCard = ({ id, title, poster, rating }) => {
           <IconContext.Provider
             value={{
               size: 25,
-              color: Math.round(rating) >= 3 ? '#FF971D' : 'grey',
+              color: Math.round(rating / 2) >= 3 ? '#FF971D' : 'grey',
             }}
           >
             <HiStar />
@@ -53,7 +53,7 @@ export const MovieCard = ({ id, title, poster, rating }) => {
           <IconContext.Provider
             value={{
               size: 25,
-              color: Math.round(rating) >= 4 ? '#FF971D' : 'grey',
+              color: Math.round(rating / 2) >= 4 ? '#FF971D' : 'grey',
             }}
           >
             <HiStar />
@@ -61,7 +61,7 @@ export const MovieCard = ({ id, title, poster, rating }) => {
           <IconContext.Provider
             value={{
               size: 25,
-              color: Math.round(rating) >= 5 ? '#FF971D' : 'grey',
+              color: Math.round(rating / 2) >= 5 ? '#FF971D' : 'grey',
             }}
           >
             <HiStar />
