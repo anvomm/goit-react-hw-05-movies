@@ -37,7 +37,7 @@ export const SearchForm = ({ showMovies }) => {
         placeholder="Let's find something to watch"
         required
       />
-      <Button onClick={e => e.target.blur()}>
+      <Button>
         <IconContext.Provider
           value={{
             size: 30,
