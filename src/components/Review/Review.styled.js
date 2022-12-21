@@ -20,4 +20,13 @@ export const Notification = styled.p`
 
 export const ReviewText = styled(Text)`
   text-align: center;
+  font-size: 14px;
+  color: #b8b8b8;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 18px;
+  }
 `;
