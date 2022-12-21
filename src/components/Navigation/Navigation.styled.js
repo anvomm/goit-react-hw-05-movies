@@ -32,8 +32,11 @@ export const NavList = styled.ul`
 export const NavWrap = styled.div`
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  @media (min-width: 1280px) {
+    justify-content: space-between;
+  }
 `;
 
 export const Logo = styled(Link)`
