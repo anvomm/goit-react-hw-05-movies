@@ -45,6 +45,7 @@ const MoviesPage = () => {
       setMovies(arrayOfMovieTitles);
       setPageCount(newPageCount);
       setIsLoading(false);
+      scroll.scrollToTop();
     };
 
     if (queryParam) {
@@ -54,12 +55,11 @@ const MoviesPage = () => {
 
   const handlePageChange = event => {
     setSearchParams({ query: queryParam, page: event.selected + 1 });
-    scroll.scrollToTop();
   };
 
   const showMoviesOnSearch = query => {
     if (queryParam === query) {
-      return;
+      return setSearchParams({ query, page: 1 });
     }
     setSearchParams({ query, page: 1 });
     setMovies([]);
