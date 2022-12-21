@@ -30,7 +30,13 @@ export const SearchForm = ({ showMovies }) => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Input type="text" name="query" autoComplete="off" required />
+      <Input
+        type="text"
+        name="query"
+        autoComplete="off"
+        placeholder="Let's find something to watch"
+        required
+      />
       <Button>
         <IconContext.Provider
           value={{
