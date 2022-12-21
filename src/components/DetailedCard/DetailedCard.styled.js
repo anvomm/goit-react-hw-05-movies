@@ -10,7 +10,7 @@ export const Title = styled.h2`
   color: #99a9ff;
 
   @media (min-width: 768px) {
-    margin: 25px 0;
+    margin: 25px 0 55px 0;
   }
 `;
 
