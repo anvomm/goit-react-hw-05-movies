@@ -8,9 +8,11 @@ export const SearchForm = ({ showMovies }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const query = e.target.elements.query.value;
+
     if (query.trim() === '') {
       return notifyAboutWhitespace();
     }
+
     showMovies(e.target.elements.query.value);
     e.target.reset();
   };

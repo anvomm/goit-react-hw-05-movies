@@ -13,10 +13,10 @@ import {
 import { MobileMenu } from 'components/MobileMenu/MobileMenu';
 
 export const Navigation = () => {
-  const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const closeMenu = () => {
-    setMobileMenuOpened(!mobileMenuOpened);
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
@@ -37,18 +37,16 @@ export const Navigation = () => {
           </IconContext.Provider>
         </Logo>
         <NavLinks to="/stars">Movie stars</NavLinks>
-        <MobileMenuButton
-          onClick={() => setMobileMenuOpened(!mobileMenuOpened)}
-        >
+        <MobileMenuButton onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           <IconContext.Provider value={{ size: 30, color: '#99a9ff' }}>
             <CgMenuGridR />
           </IconContext.Provider>
         </MobileMenuButton>
       </NavWrap>
-      {mobileMenuOpened && (
+      {mobileMenuOpen && (
         <MobileMenu
           closeMenu={closeMenu}
-          onClick={() => setMobileMenuOpened(!mobileMenuOpened)}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         />
       )}
     </Nav>

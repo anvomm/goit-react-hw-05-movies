@@ -15,7 +15,7 @@ export const StarCard = ({ name, image }) => {
 
   return (
     <>
-      <Image src={getImgUrl(image)} alt={name} width="285" height={428} />
+      <Image src={getImgUrl(image)} alt={name} width={285} height={428} />
       <CardBottom>
         <CardTitle>{name}</CardTitle>
       </CardBottom>

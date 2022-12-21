@@ -26,10 +26,11 @@ export const DetailedCard = ({ movieData }) => {
     vote_average,
     overview,
   } = movieData;
+
   const date = () => new Date(release_date).getFullYear();
 
   const genresNames = genres
-    ? movieData.genres.map(genre => genre.name).join(', ')
+    ? genres.map(genre => genre.name).join(', ')
     : 'unknown';
 
   const getImgUrl = image => {
