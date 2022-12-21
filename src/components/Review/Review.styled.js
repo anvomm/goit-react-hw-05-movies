@@ -4,6 +4,7 @@ import { Text } from 'components/DetailedCard/DetailedCard.styled';
 export const Title = styled.h3`
   text-align: center;
   font-size: 20px;
+  color: #5ce4cf;
   @media (min-width: 768px) {
     font-size: 22px;
   }
@@ -18,4 +19,5 @@ export const Notification = styled.p`
 `;
 
 export const ReviewText = styled(Text)`
-text-align: center;`
+  text-align: center;
+`;
