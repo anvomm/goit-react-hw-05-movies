@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { Span, Text } from 'components/DetailedCard/DetailedCard.styled';
-import { Title } from './Review.styled';
+import { Span } from 'components/DetailedCard/DetailedCard.styled';
+import { Title, ReviewText } from './Review.styled';
 
 export const Review = ({ author, content }) => {
   return (
@@ -9,7 +9,7 @@ export const Review = ({ author, content }) => {
         <Span>Author: </Span>
         {author}
       </Title>
-      <Text>{content}</Text>
+      <ReviewText>{content}</ReviewText>
     </>
   );
 };

@@ -75,6 +75,8 @@ export const Div = styled.div`
 export const Text = styled.p`
   font-size: 16px;
   line-height: 1.45;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   @media (min-width: 768px) {
     font-size: 18px;
