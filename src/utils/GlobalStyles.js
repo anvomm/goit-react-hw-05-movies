@@ -35,7 +35,7 @@ button {
 }
 body {
     background-color:  #1D1D1D;
-    color: #B8B8B8;
+    color: #f4f4f4;
     font-family: 'Rubik';
 }
 #root {

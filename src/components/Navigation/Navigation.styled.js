@@ -68,7 +68,6 @@ export const NavLinks = styled(NavLink)`
     display: block;
     font-size: 18px;
     text-transform: lowercase;
-    color: #f4f4f4;
 
     &.active {
       color: #99a9ff;
