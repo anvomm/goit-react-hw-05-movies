@@ -14,17 +14,17 @@ import { StyledContainer } from 'components/DetailedCard/DetailedCard.styled';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const queryParam = searchParams.get('query');
+  const pageParam = searchParams.get('page');
 
   const [pageCount, setPageCount] = useState(0);
 
   useEffect(() => {
     const fetchMoviesOnSearch = async () => {
       setIsLoading(true);
-      const arrayOfMovies = await getMovieByQuery(queryParam, page);
+      const arrayOfMovies = await getMovieByQuery(queryParam, pageParam);
       const newPageCount = arrayOfMovies.total_pages;
 
       if (arrayOfMovies.results.length === 0) {
@@ -50,16 +50,15 @@ const MoviesPage = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       fetchMoviesOnSearch();
     }
-  }, [queryParam, page]);
+  }, [queryParam, pageParam]);
 
   const handlePageChange = event => {
-    setPage(event.selected + 1);
+    setSearchParams({ query: queryParam, page: event.selected + 1 });
   };
 
   const showMoviesOnSearch = query => {
-    setSearchParams({ query });
+    setSearchParams({ query, page: 1 });
     setMovies([]);
-    setPage(1);
   };
 
   const notifyAboutWrongQuery = () => {
@@ -116,7 +115,7 @@ const MoviesPage = () => {
           onPageChange={handlePageChange}
           containerClassName="pagination"
           activeClassName="active"
-          forcePage={page - 1}
+          forcePage={pageParam - 1}
         />
       )}
       <StyledContainer />
