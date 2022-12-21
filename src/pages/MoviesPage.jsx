@@ -10,6 +10,7 @@ import { RxDoubleArrowLeft } from 'react-icons/rx';
 import { RxDoubleArrowRight } from 'react-icons/rx';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { animateScroll as scroll } from 'react-scroll';
 import { StyledContainer } from 'components/DetailedCard/DetailedCard.styled';
 
 const MoviesPage = () => {
@@ -47,13 +48,13 @@ const MoviesPage = () => {
     };
 
     if (queryParam) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
       fetchMoviesOnSearch();
     }
   }, [queryParam, pageParam]);
 
   const handlePageChange = event => {
     setSearchParams({ query: queryParam, page: event.selected + 1 });
+    scroll.scrollToTop();
   };
 
   const showMoviesOnSearch = query => {
