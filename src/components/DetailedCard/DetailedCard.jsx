@@ -57,7 +57,7 @@ export const DetailedCard = ({ movieData }) => {
         </Title>
       )}
       <Wrap>
-        <Image src={getImgUrl(poster_path)} alt={title} />
+        {title && <Image src={getImgUrl(poster_path)} alt={title} />}
         <SmallWrap>
           {vote_average > 0 && (
             <Text>
