@@ -17,9 +17,18 @@ import {
 import { Loader } from 'components/Loader/Loader';
 
 export const DetailedCard = ({ movieData }) => {
-  const date = () => new Date(movieData.release_date).getFullYear();
+  const {
+    release_date,
+    genres,
+    videos,
+    title,
+    poster_path,
+    vote_average,
+    overview,
+  } = movieData;
+  const date = () => new Date(release_date).getFullYear();
 
-  const genres = movieData.genres
+  const genresNames = genres
     ? movieData.genres.map(genre => genre.name).join(', ')
     : 'unknown';
 
@@ -30,42 +39,44 @@ export const DetailedCard = ({ movieData }) => {
     return `https://image.tmdb.org/t/p/w300${image}`;
   };
 
-  const getVideo = () =>
-    movieData.videos.results.find(video => video.type === 'Teaser')
-      ? movieData.videos.results.find(video => video.type === 'Teaser').key
-      : movieData.videos.results[0].key;
+  const getVideo = () => {
+    const videosArr = videos.results;
+    return videosArr.find(video => video.type === 'Teaser')
+      ? videosArr.find(video => video.type === 'Teaser').key
+      : videosArr[0].key;
+  };
 
   const location = useLocation();
 
   return (
     <>
-      {movieData.release_date && (
+      {release_date && (
         <Title>
-          {movieData.title} ({date()})
+          {title} ({date()})
         </Title>
       )}
       <Wrap>
-        <Image src={getImgUrl(movieData.poster_path)} alt={movieData.title} />
+        <Image src={getImgUrl(poster_path)} alt={title} />
         <SmallWrap>
-          {movieData.vote_average > 0 && (
+          {vote_average > 0 && (
             <Text>
               <Span>user score: </Span>
-              {Math.round(movieData.vote_average * 10)}%
+              {Math.round(vote_average * 10)}%
             </Text>
           )}
-          {movieData.overview && (
+          {overview && (
             <Text>
               <Span>overview: </Span>
-              {movieData.overview}
+              {overview}
             </Text>
           )}
-          {movieData.genres && movieData.genres.length !== 0 && (
+          {genres && genres.length !== 0 && (
             <Text>
               <Span>genres: </Span>
-              {genres}
+              {genresNames}
             </Text>
           )}
-          {movieData.videos && movieData.videos.results.length !== 0 && (
+          {videos && videos.results.length !== 0 && (
             <Div>
               trailer:
               <Video
@@ -77,7 +88,7 @@ export const DetailedCard = ({ movieData }) => {
           )}
         </SmallWrap>
       </Wrap>
-      {movieData.title && (
+      {title && (
         <div>
           <AdditionalTitle>Additional information</AdditionalTitle>
           <List>
