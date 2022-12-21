@@ -57,6 +57,9 @@ const MoviesPage = () => {
   };
 
   const showMoviesOnSearch = query => {
+    if (queryParam === query) {
+      return;
+    }
     setSearchParams({ query, page: 1 });
     setMovies([]);
   };
