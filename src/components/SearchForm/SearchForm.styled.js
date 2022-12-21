@@ -31,6 +31,14 @@ export const Input = styled.input`
   );
   border-image-slice: 1;
   color: #f4f4f4;
+
+  &::placeholder {
+    font-size: 13px;
+
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const Button = styled.button`
