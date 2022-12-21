@@ -12,6 +12,7 @@ export const Input = styled.input`
     width: 150px;
   }
   width: 357px;
+  text-align: center;
   padding-left: 35px;
   margin-bottom: 50px;
   font-size: 18px;
@@ -29,7 +30,7 @@ export const Input = styled.input`
     rgba(92, 228, 207, 0)
   );
   border-image-slice: 1;
-  color: #fff;
+  color: #f4f4f4;
 `;
 
 export const Button = styled.button`

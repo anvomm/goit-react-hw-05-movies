@@ -51,6 +51,7 @@ export const NavLinkStyled = styled(NavLink)`
   gap: 40px;
   font-size: 18px;
   text-transform: lowercase;
+  color: #f4f4f4;
 
   &.active {
     color: #99a9ff;
