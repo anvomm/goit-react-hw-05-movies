@@ -19,6 +19,9 @@ export const Image = styled.img`
   @media (max-width: 767px) {
     margin-bottom: 20px;
   }
+  @media (min-width: 768px) {
+    align-self: flex-start;
+  }
 `;
 
 export const Wrap = styled.div`
@@ -37,6 +40,22 @@ export const SmallWrap = styled.div`
 `;
 
 export const Span = styled.span`
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: #99a9ff;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 24px;
+  }
+`;
+export const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.1em;
@@ -134,5 +153,21 @@ export const StyledContainer = styled(ToastContainer)`
       rgba(96, 219, 212, 0.8),
       rgba(92, 228, 207, 0.15)
     );
+  }
+`;
+
+export const Video = styled.iframe`
+  width: 280px;
+  height: 157px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 448px;
+    height: 252px;
+    margin: 0;
+  }
+  @media (min-width: 1280px) {
+    width: 504px;
+    height: 284px;
   }
 `;

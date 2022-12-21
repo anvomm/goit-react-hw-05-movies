@@ -11,6 +11,8 @@ import {
   AdditionalTitle,
   List,
   AdditionalLink,
+  Div,
+  Video,
 } from './DetailedCard.styled';
 import { Loader } from 'components/Loader/Loader';
 
@@ -28,6 +30,11 @@ export const DetailedCard = ({ movieData }) => {
     return `https://image.tmdb.org/t/p/w300${image}`;
   };
 
+  const getVideo = () =>
+    movieData.videos.results.find(video => video.type === 'Teaser')
+      ? movieData.videos.results.find(video => video.type === 'Teaser').key
+      : movieData.videos.results[0].key;
+
   const location = useLocation();
 
   return (
@@ -44,7 +51,7 @@ export const DetailedCard = ({ movieData }) => {
           width={350}
         />
         <SmallWrap>
-          {movieData.vote_average && (
+          {movieData.vote_average > 0 && (
             <Text>
               <Span>user score: </Span>
               {Math.round(movieData.vote_average * 10)}%
@@ -56,11 +63,21 @@ export const DetailedCard = ({ movieData }) => {
               {movieData.overview}
             </Text>
           )}
-          {movieData.genres && (
+          {movieData.genres && movieData.genres.length !== 0 && (
             <Text>
               <Span>genres: </Span>
               {genres}
             </Text>
+          )}
+          {movieData.videos && movieData.videos.results.length !== 0 && (
+            <Div>
+              trailer:
+              <Video
+                src={`https://www.youtube.com/embed/${getVideo()}`}
+                frameBorder="0"
+                allowFullScreen
+              ></Video>
+            </Div>
           )}
         </SmallWrap>
       </Wrap>

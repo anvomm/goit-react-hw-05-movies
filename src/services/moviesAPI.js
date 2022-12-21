@@ -25,7 +25,6 @@ export async function getMovieByQuery(query, page = 1) {
         page,
       },
     });
-    console.log(data);
     return data;
   } catch (error) {
     console.error(error);
@@ -37,6 +36,7 @@ export async function getOneMovieById(id) {
     const { data } = await axios(`3/movie/${id}`, {
       params: {
         api_key: API_KEY,
+        append_to_response: 'videos',
       },
     });
     return data;
