@@ -16,11 +16,14 @@ export const Title = styled.h2`
 
 export const Image = styled.img`
   border-radius: 5px;
+  width: 250px;
+  margin: 0 auto;
   @media (max-width: 767px) {
     margin-bottom: 20px;
   }
   @media (min-width: 768px) {
     align-self: flex-start;
+    width: 350px;
   }
 `;
 
@@ -84,7 +87,6 @@ export const Text = styled.p`
 export const AdditionalTitle = styled.h3`
   text-align: center;
   margin-bottom: 30px;
-  font-weight: 500;
   font-size: 24px;
   color: #99a9ff;
 

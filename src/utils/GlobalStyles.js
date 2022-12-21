@@ -8,6 +8,11 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
 ul {
     margin-bottom: 0;
   margin-top: 0;
@@ -30,7 +35,7 @@ button {
 }
 body {
     background-color:  #1D1D1D;
-    color: #fff;
+    color: #B8B8B8;
     font-family: 'Rubik';
 }
 #root {

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import { Image } from 'components/MovieCard/MovieCard.styled';
-import { CardTitle, Text, ActorCardBottom } from './ActorCard.styled';
+import { CardTitle, Text, ActorCardBottom, Image } from './ActorCard.styled';
 
 export const ActorCard = ({ name, picture, character }) => {
   const getImgUrl = image => {

@@ -45,11 +45,7 @@ export const DetailedCard = ({ movieData }) => {
         </Title>
       )}
       <Wrap>
-        <Image
-          src={getImgUrl(movieData.poster_path)}
-          alt={movieData.title}
-          width={350}
-        />
+        <Image src={getImgUrl(movieData.poster_path)} alt={movieData.title} />
         <SmallWrap>
           {movieData.vote_average > 0 && (
             <Text>

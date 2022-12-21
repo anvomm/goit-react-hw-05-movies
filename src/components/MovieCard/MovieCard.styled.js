@@ -28,12 +28,13 @@ export const CardLink = styled(Link)`
 export const CardBottom = styled.div`
   padding: 20px;
   flex-grow: 1;
-  max-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 export const CardTitle = styled.h2`
   font-size: 22px;
-  font-weight: 500;
   line-height: 1.33;
   text-align: center;
 `;
