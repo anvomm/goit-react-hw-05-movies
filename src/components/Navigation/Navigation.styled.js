@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
+  position: relative;
   height: 80px;
   padding: 0 20px;
   background-color: #232526;
@@ -36,6 +37,10 @@ export const NavWrap = styled.div`
 `;
 
 export const Logo = styled(Link)`
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
   display: flex;
   align-items: center;
   gap: 3px;
@@ -49,7 +54,6 @@ export const Logo = styled(Link)`
   }
 
   @media (min-width: 1280px) {
-    margin: 0 auto;
     font-size: 26px;
   }
 `;
