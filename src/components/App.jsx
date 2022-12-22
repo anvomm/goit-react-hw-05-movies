@@ -1,6 +1,5 @@
 import { lazy, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import WebFont from 'webfontloader';
 import { Layout } from './Layout/Layout';
 import { GlobalStyles } from 'utils/GlobalStyles';
 
@@ -25,14 +24,6 @@ export const App = () => {
   const ReviewsSubPage = lazy(() =>
     import('pages/ReviewsSubPage' /* webpackChunkName: "reviews-subpage" */)
   );
-
-  useEffect(() => {
-    WebFont.load({
-      google: {
-        families: ['Rubik', 'Poppins'],
-      },
-    });
-  }, []);
 
   return (
     <>

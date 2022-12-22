@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
+import '../../fonts/poppins-v20-latin-500.eot';
+import '../../fonts/poppins-v20-latin-500.svg';
+import '../../fonts/poppins-v20-latin-500.ttf';
+import '../../fonts/poppins-v20-latin-500.woff';
+import '../../fonts/poppins-v20-latin-500.woff2';
 
 export const Nav = styled.nav`
   position: relative;
@@ -47,7 +52,7 @@ export const Logo = styled(Link)`
   display: flex;
   align-items: center;
   gap: 3px;
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 500;
   text-transform: lowercase;
