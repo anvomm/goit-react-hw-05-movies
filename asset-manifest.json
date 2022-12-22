@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.8606878e.js",
+    "main.css": "/goit-react-hw-05-movies/static/css/main.9eed587e.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.a9c26617.js",
     "home-page.js": "/goit-react-hw-05-movies/static/js/home-page.b17d28bc.chunk.js",
     "movies-page.js": "/goit-react-hw-05-movies/static/js/movies-page.90666279.chunk.js",
     "stars-page.js": "/goit-react-hw-05-movies/static/js/stars-page.89f86625.chunk.js",
@@ -12,9 +12,24 @@
     "static/js/596.befabcda.chunk.js": "/goit-react-hw-05-movies/static/js/596.befabcda.chunk.js",
     "static/css/774.d0787231.chunk.css": "/goit-react-hw-05-movies/static/css/774.d0787231.chunk.css",
     "static/js/774.0b83c43b.chunk.js": "/goit-react-hw-05-movies/static/js/774.0b83c43b.chunk.js",
+    "static/media/rubik-v23-latin-500.svg": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-500.1d725c3e397c073c5a671be24783fa5e.svg",
+    "static/media/rubik-v23-latin-regular.svg": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-regular.41d67890e3905bff940ec0d6b3df2d86.svg",
+    "static/media/poppins-v20-latin-500.svg": "/goit-react-hw-05-movies/static/media/poppins-v20-latin-500.138d54dda216e46d983051607175c7fa.svg",
+    "static/media/rubik-v23-latin-500.ttf": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-500.cc613ceae43403224078.ttf",
+    "static/media/rubik-v23-latin-regular.ttf": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-regular.6b7443bbc990ec75806f.ttf",
+    "static/media/rubik-v23-latin-500.woff": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-500.8ca13925493ce3ada7f1.woff",
+    "static/media/rubik-v23-latin-regular.woff": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-regular.73a01fb47fdc7ee8ae1e.woff",
+    "static/media/rubik-v23-latin-500.eot": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-500.35b6e9d0b36c90ce9e11.eot",
+    "static/media/rubik-v23-latin-regular.eot": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-regular.3166e1a137a9feac7230.eot",
+    "static/media/rubik-v23-latin-500.woff2": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-500.724f660d40be21415a83.woff2",
+    "static/media/rubik-v23-latin-regular.woff2": "/goit-react-hw-05-movies/static/media/rubik-v23-latin-regular.65cfd3d83c8c52c45c77.woff2",
+    "static/media/poppins-v20-latin-500.ttf": "/goit-react-hw-05-movies/static/media/poppins-v20-latin-500.c5bf954f85d4e113650f.ttf",
+    "static/media/poppins-v20-latin-500.woff": "/goit-react-hw-05-movies/static/media/poppins-v20-latin-500.8609f9c59114a158e3ad.woff",
+    "static/media/poppins-v20-latin-500.eot": "/goit-react-hw-05-movies/static/media/poppins-v20-latin-500.7caad43c36b57f718834.eot",
+    "static/media/poppins-v20-latin-500.woff2": "/goit-react-hw-05-movies/static/media/poppins-v20-latin-500.08491d3f7fe7ae88ef44.woff2",
     "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.8606878e.js.map": "/goit-react-hw-05-movies/static/js/main.8606878e.js.map",
+    "main.9eed587e.css.map": "/goit-react-hw-05-movies/static/css/main.9eed587e.css.map",
+    "main.a9c26617.js.map": "/goit-react-hw-05-movies/static/js/main.a9c26617.js.map",
     "home-page.b17d28bc.chunk.js.map": "/goit-react-hw-05-movies/static/js/home-page.b17d28bc.chunk.js.map",
     "movies-page.90666279.chunk.js.map": "/goit-react-hw-05-movies/static/js/movies-page.90666279.chunk.js.map",
     "stars-page.89f86625.chunk.js.map": "/goit-react-hw-05-movies/static/js/stars-page.89f86625.chunk.js.map",
@@ -27,7 +42,7 @@
     "774.0b83c43b.chunk.js.map": "/goit-react-hw-05-movies/static/js/774.0b83c43b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.8606878e.js"
+    "static/css/main.9eed587e.css",
+    "static/js/main.a9c26617.js"
   ]
 }
