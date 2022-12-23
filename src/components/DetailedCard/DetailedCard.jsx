@@ -42,8 +42,8 @@ export const DetailedCard = ({ movieData }) => {
 
   const getVideo = () => {
     const videosArr = videos.results;
-    return videosArr.find(video => video.type === 'Teaser')
-      ? videosArr.find(video => video.type === 'Teaser').key
+    return videosArr.find(video => video.type === 'Trailer')
+      ? videosArr.find(video => video.type === 'Trailer').key
       : videosArr[0].key;
   };
 
