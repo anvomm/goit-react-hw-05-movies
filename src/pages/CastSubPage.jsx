@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { getMovieActors } from 'services/moviesAPI';
 import { ActorsList } from 'components/ActorsList/ActorsList';
 import { Notification } from 'components/Review/Review.styled';
@@ -7,7 +7,6 @@ import { Loader } from 'components/Loader/Loader';
 
 const CastSubPage = () => {
   const { movieId } = useParams();
-  const doOneFetch = useRef(null);
   const [actors, setActors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,10 +26,7 @@ const CastSubPage = () => {
       setIsLoading(false);
     };
 
-    if (doOneFetch.current === null) {
-      loadActors();
-      doOneFetch.current = 1;
-    }
+    loadActors();
   }, [movieId]);
 
   return (

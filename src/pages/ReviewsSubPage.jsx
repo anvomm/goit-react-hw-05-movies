@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { getMovieReviews } from 'services/moviesAPI';
 import { ReviewList } from 'components/ReviewList/ReviewList';
 import { Notification } from 'components/Review/Review.styled';
@@ -9,7 +9,6 @@ const ReviewsSubPage = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const doOneFetch = useRef(null);
 
   useEffect(() => {
     const loadReviews = async () => {
@@ -25,10 +24,7 @@ const ReviewsSubPage = () => {
       setIsLoading(false);
     };
 
-    if (doOneFetch.current === null) {
-      loadReviews();
-      doOneFetch.current = 1;
-    }
+    loadReviews();
   }, [movieId]);
 
   return (

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'services/moviesAPI';
 import { Heading } from 'components/Heading/Heading';
 import { MoviesCardsList } from 'components/MoviesCardsList/MoviesCardsList';
@@ -7,8 +7,6 @@ import { Loader } from 'components/Loader/Loader';
 const HomePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  const doOneFetch = useRef(null);
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {
@@ -27,10 +25,7 @@ const HomePage = () => {
       setIsLoading(false);
     };
 
-    if (doOneFetch.current === null) {
-      fetchTrendingMovies();
-      doOneFetch.current = 1;
-    }
+    fetchTrendingMovies();
   }, []);
 
   return (

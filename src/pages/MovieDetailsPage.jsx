@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOneMovieById } from 'services/moviesAPI';
 import { DetailedCard } from 'components/DetailedCard/DetailedCard';
@@ -9,7 +9,6 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const doOneFetch = useRef(null);
 
   useEffect(() => {
     const loadMovieData = async () => {
@@ -18,10 +17,8 @@ const MovieDetailsPage = () => {
       setMovieData(data);
       setIsLoading(false);
     };
-    if (doOneFetch.current === null) {
-      loadMovieData();
-      doOneFetch.current = 1;
-    }
+
+    loadMovieData();
   }, [movieId]);
 
   return (

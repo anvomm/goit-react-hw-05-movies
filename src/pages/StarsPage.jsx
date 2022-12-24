@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { getTrendingPersons } from 'services/moviesAPI';
 import { Heading } from 'components/Heading/Heading';
 import { StarsCardList } from 'components/StarsCardList/StarsCardList';
@@ -7,7 +7,6 @@ import { Loader } from 'components/Loader/Loader';
 const StarsPage = () => {
   const [stars, setStars] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const doOneFetch = useRef(null);
 
   useEffect(() => {
     const fetchStars = async () => {
@@ -22,10 +21,7 @@ const StarsPage = () => {
       setIsLoading(false);
     };
 
-    if (doOneFetch.current === null) {
-      fetchStars();
-      doOneFetch.current = 1;
-    }
+    fetchStars();
   }, []);
   return (
     <>
